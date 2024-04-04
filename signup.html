@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Signin</title>
+	</head>
+	<br><br><br><br><br><br><br><br><br>
+	<body>
+<center>
+		<h1>Sign-up</h1>
+
+<script>
+	function lettersOnly(input){
+		var regex = /[^a-z]/gi;
+		input.value = input.value.replace(regex, "");
+	}
+</script>		
+
+<table>
+		<form action="connection_signup.php" method="post" enctype="multipart/form-data">
+		<tr>	<div class="input-box">
+					<td><strong>Username</strong></td>
+			    	<td><input type="text" class="username" name="username" maxlength="25" id="username" onkeyup="lettersOnly(this)" required></td>
+				</div>
+		</tr>
+		<tr>
+			<div class="input-box">
+				<td><strong>Email</strong></td>
+			<td><input type="text" class="email" name="email" maxlength="30" id="email" required></td>
+			</div>
+		</tr>
+		<tr>	
+			<div class="input-box">			
+				<td><strong>Senha</strong></td>
+			<td><input type="password" class="password" name="password" minlength="8" maxlength="30" id="password" ></td>
+			</div>
+		</tr>
+		<tr>	
+			<div class="input-box">
+				<td><strong>Confirmar senha</strong></td>
+			<td><input type="password" class="confirmarsenha" name="confirmarsenha" minlength="8" maxlength="30" ></td>
+			
+		    </div>
+		</tr></td></table>
+<br>
+			
+			<button class="button" type="submit">Continuar</button>
+		</form>	
+		<br>
+      <script>
+document.querySelector('.button').onclick = function(){
+	var password = document.querySelector('.password').value,
+		confirmarsenha = document.querySelector('.confirmarsenha').value;
+
+		if(password==""){
+			alert("Field cannot be empty");
+		}
+		else if(password != confirmarsenha){
+			alert("Password didn't match try again");
+			return false
+		}
+		return true
+}	
+      
+	  </script>
+	  <br>
+		<button> <a href="login.php">Log-in</a></button>	
+	</center>
+	
+	</body> 
+</html>	
